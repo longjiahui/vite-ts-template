@@ -14,7 +14,7 @@ dist-ssr
 
 # playwright e2e test
 playwright-report
-test-result
+test-results
 
 # Editor directories and files
 .vscode/*
