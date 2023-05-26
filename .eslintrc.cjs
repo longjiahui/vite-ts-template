@@ -6,7 +6,7 @@ module.exports = {
     },
     extends: [
         'eslint:recommended',
-        'plugin:vue/vue3-essential',
+        'plugin:vue/vue3-recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:prettier/recommended',
     ],
@@ -22,5 +22,6 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-unused-vars': 'off',
+        'vue/one-component-per-file': 0,
     },
 }

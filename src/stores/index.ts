@@ -1,7 +1,6 @@
-import { defineStore } from 'pinia'
-
 import { StorageKey } from '@/const'
 import { setLocal, removeLocal, getLocalToken } from '@/scripts/utils'
+import { defineStore } from 'pinia'
 
 export const useTokenStore = defineStore('token', {
     state() {

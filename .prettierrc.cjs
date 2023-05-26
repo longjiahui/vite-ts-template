@@ -15,4 +15,12 @@ module.exports = {
     bracketSpacing: true,
     //
     endOfLine: 'lf',
+    overrides: [
+        {
+            files: '*.tsx',
+            options: {
+                printWidth: 200,
+            },
+        },
+    ],
 }

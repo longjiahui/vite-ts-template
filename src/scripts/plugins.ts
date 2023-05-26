@@ -1,10 +1,8 @@
-import { createPinia } from 'pinia'
-
 import * as $const from '@/const'
+import * as models from '@/models'
 import router from '@/router'
 import * as utils from '@/scripts/utils'
-import * as models from '@/models'
-
+import { createPinia } from 'pinia'
 import { App } from 'vue'
 
 export default {

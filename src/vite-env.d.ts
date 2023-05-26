@@ -1,8 +1,8 @@
 /// <reference types="vite/client" />
-import router from '@/router'
 import * as $const from '@/const'
-import * as utils from '@/scripts/utils'
 import * as models from '@/models'
+import router from '@/router'
+import * as utils from '@/scripts/utils'
 
 declare module 'vue' {
     interface ComponentCustomProperties {

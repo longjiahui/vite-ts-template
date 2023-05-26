@@ -1,6 +1,6 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
 import * as $const from '@/const'
 import { useTokenStore } from '@/stores'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 const router = createRouter({
     history: createWebHashHistory(),

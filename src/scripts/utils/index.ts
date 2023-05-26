@@ -1,9 +1,9 @@
-export * from './storage'
-export * from './traverse'
-
 import * as storage from './storage'
 import * as $const from '@/const'
 import { ref, watch, WatchSource, WatchOptions, Ref } from 'vue'
+
+export * from './storage'
+export * from './traverse'
 
 export function getLocalToken(): string {
     return storage.getLocal($const.StorageKey.token, '')
