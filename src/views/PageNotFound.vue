@@ -1,14 +1,14 @@
 <template>
-    <div class="w-full h-full flex flex-col justify-center items-center">
+    <div class="flex h-full w-full flex-col items-center justify-center">
         <div
-            class="p-12 flex flex-col space-y-2 justfiy-center items-center border rounded-lg text-gray-500 cursor-pointer transition-opacity duration-300 hover:opacity-70"
+            class="justfiy-center flex cursor-pointer flex-col items-center space-y-2 rounded-lg border p-12 text-gray-500 transition-opacity duration-300 hover:opacity-70"
             @click="
                 $router.replace({
                     name: $const.Routes.default,
                 })
             "
         >
-            <div class="font-bold text-4xl">404</div>
+            <div class="text-4xl font-bold">404</div>
             <div>找不到该页面，点击回到首页</div>
         </div>
     </div>

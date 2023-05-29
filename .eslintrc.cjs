@@ -23,5 +23,9 @@ module.exports = {
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-unused-vars': 'off',
         'vue/one-component-per-file': 0,
+        // 暂时跟prettier-plugin-tailwindcss 有冲突
+        // prettier-plugin-tailwindcss 会将class置为order1
+        // attributes-order 会管理class的order
+        'vue/attributes-order': 0,
     },
 }
