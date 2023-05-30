@@ -9,14 +9,12 @@ const app = createApp(App)
 
 app.use(plugins)
 
-const module = isDev
-    ? import.meta.glob('@/index')
-    : import.meta.glob('../dist/myLib.js')
+const module = isDev ? import.meta.glob('@/index') : import.meta.glob('../dist/myLib.js')
 
 ;(async () => {
-    const [{ default: defaultLib }] = (await Promise.all(
-        Object.keys(module).map((k: keyof typeof module) => module[k]()),
-    )) as [{ default: typeof DefaultLib }]
+    const [{ default: defaultLib }] = (await Promise.all(Object.keys(module).map((k: keyof typeof module) => module[k]()))) as [
+        { default: typeof DefaultLib },
+    ]
     defaultLib()
 })().finally(() => {
     app.mount('#app')
