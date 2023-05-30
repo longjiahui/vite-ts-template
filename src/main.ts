@@ -11,7 +11,7 @@ app.use(plugins)
 
 const module = isDev
     ? import.meta.glob('@/index')
-    : import.meta.glob('../dist/huitr.js')
+    : import.meta.glob('../dist/myLib.js')
 
 ;(async () => {
     const [{ default: defaultLib }] = (await Promise.all(
