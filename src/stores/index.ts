@@ -1,11 +1,11 @@
 import { StorageKey } from '@/const'
-import { setLocal, removeLocal, getLocalToken } from '@/scripts/utils'
+import { useLocalStorage } from '@vueuse/core'
 import { defineStore } from 'pinia'
 
 export const useTokenStore = defineStore('token', {
     state() {
         return {
-            token: getLocalToken(),
+            token: useLocalStorage(StorageKey.token, ''),
         }
     },
     getters: {
@@ -15,11 +15,9 @@ export const useTokenStore = defineStore('token', {
     },
     actions: {
         setToken(token: string) {
-            setLocal(StorageKey.token, token)
             this.token = token
         },
         removeToken() {
-            removeLocal(StorageKey.token)
             this.token = ''
         },
     },
