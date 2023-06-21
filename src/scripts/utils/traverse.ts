@@ -27,13 +27,7 @@ export function traverse<T = any, R = any>(
             } else {
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 if ((d[childrenKey] as any) instanceof Array) {
-                    ret = traverse(
-                        d[childrenKey] as T[],
-                        childrenKey,
-                        func,
-                        d,
-                        layer + 1,
-                    )
+                    ret = traverse(d[childrenKey] as T[], childrenKey, func, d, layer + 1)
                     if (ret !== undefined) {
                         return ret
                     }
@@ -64,13 +58,7 @@ export function traverseMap<R = any, T = any>(
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
     ) => any,
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    filter?: (
-        d: T,
-        i: number,
-        ds: T[],
-        p: T | undefined,
-        layer: number,
-    ) => boolean,
+    filter?: (d: T, i: number, ds: T[], p: T | undefined, layer: number) => boolean,
 ): R[] {
     const mapData: R[] = []
     traverse<T>(datas, childrenKey, (d, i, ds, p, layer) => {
@@ -113,13 +101,7 @@ export async function traverseAsync<T = any>(
             } else {
                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 if ((d[childrenKey] as any) instanceof Array) {
-                    ret = await traverse(
-                        d[childrenKey] as T[],
-                        childrenKey,
-                        func,
-                        d,
-                        layer + 1,
-                    )
+                    ret = await traverse(d[childrenKey] as T[], childrenKey, func, d, layer + 1)
                     if (ret !== undefined) {
                         return ret
                     }
@@ -150,13 +132,7 @@ export async function traverseMapAsync<T = any>(
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
     ) => any,
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    filter?: (
-        d: T,
-        i: number,
-        ds: T[],
-        p: T | undefined,
-        layer: number,
-    ) => boolean,
+    filter?: (d: T, i: number, ds: T[], p: T | undefined, layer: number) => boolean,
 ): Promise<T[]> {
     const mapData: T[] = []
     await traverse<T>(datas, childrenKey, async (d, i, ds, p, layer) => {

@@ -19,12 +19,7 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to) => {
-    if (
-        ![
-            $const.Routes.login as string,
-            $const.Routes.pageNotFound as string,
-        ].includes(to.name?.toString() || '')
-    ) {
+    if (![$const.Routes.login as string, $const.Routes.pageNotFound as string].includes(to.name?.toString() || '')) {
         // 检查是否登录
         const tokenStore = useTokenStore()
         if (!tokenStore.isLogin) {
