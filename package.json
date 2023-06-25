@@ -22,8 +22,6 @@
         "test-and-build": "npm run test:all && npm run build"
     },
     "dependencies": {
-        "@types/shortid": "^0.0.29",
-        "@types/throttle-debounce": "^5.0.0",
         "@vitejs/plugin-vue": "^4.1.0",
         "@vitejs/plugin-vue-jsx": "^3.0.1",
         "@vueuse/components": "^10.1.2",
@@ -42,6 +40,8 @@
         "vue-tsc": "^1.2.0"
     },
     "devDependencies": {
+        "@types/shortid": "^0.0.29",
+        "@types/throttle-debounce": "^5.0.0",
         "@commitlint/config-conventional": "^17.6.3",
         "@playwright/test": "^1.33.0",
         "@trivago/prettier-plugin-sort-imports": "^4.1.1",
