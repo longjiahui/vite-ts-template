@@ -4,12 +4,7 @@ module.exports = {
         es2021: true,
         node: true,
     },
-    extends: [
-        'eslint:recommended',
-        'plugin:vue/vue3-recommended',
-        'plugin:@typescript-eslint/recommended',
-        'plugin:prettier/recommended',
-    ],
+    extends: ['eslint:recommended', 'plugin:vue/vue3-recommended', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
     overrides: [],
     parser: 'vue-eslint-parser',
     parserOptions: {
@@ -27,5 +22,6 @@ module.exports = {
         // prettier-plugin-tailwindcss 会将class置为order1
         // attributes-order 会管理class的order
         'vue/attributes-order': 0,
+        'vue/multi-word-component-names': 0,
     },
 }
