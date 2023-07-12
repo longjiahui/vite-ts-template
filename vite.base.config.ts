@@ -15,7 +15,7 @@ export default defineConfig({
         }),
         AutoImportComponents({
             // default: src.components
-            // dirs: ['src/components'],
+            dirs: ['src/components'],
             extensions: ['vue'],
             deep: true,
             dts: 'src/components.d.ts',
