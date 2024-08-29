@@ -9,11 +9,11 @@
  * @param func          遍历函数，返回非undefined值会提前返回该值
  * @returns
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 export function traverse<T = any, R = any>(
     datas: T[],
     childrenKey: keyof T,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     func: (d: T, i: number, ds: T[], p: T | undefined, layer: number) => any,
     parent?: T,
     layer = 0,
@@ -25,7 +25,6 @@ export function traverse<T = any, R = any>(
             if (ret !== undefined) {
                 return ret
             } else {
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 if ((d[childrenKey] as any) instanceof Array) {
                     ret = traverse(d[childrenKey] as T[], childrenKey, func, d, layer + 1)
                     if (ret !== undefined) {
@@ -45,19 +44,12 @@ export function traverse<T = any, R = any>(
  * @param filter        filter函数，如何有值，根据返回boolean判断是否过滤该此遍历函数返回
  * @returns
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 export function traverseMap<R = any, T = any>(
     datas: T[],
     childrenKey: keyof T,
-    func: (
-        d: T,
-        i: number,
-        ds: T[],
-        p: T | undefined,
-        layer: number,
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    ) => any,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    func: (d: T, i: number, ds: T[], p: T | undefined, layer: number) => any,
+
     filter?: (d: T, i: number, ds: T[], p: T | undefined, layer: number) => boolean,
 ): R[] {
     const mapData: R[] = []
@@ -83,11 +75,11 @@ export function traverseMap<R = any, T = any>(
  * @param func          遍历函数，返回非undefined值会提前返回该值
  * @returns
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 export async function traverseAsync<T = any>(
     datas: T[],
     childrenKey: keyof T,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     func: (d: T, i: number, ds: T[], p: T | undefined, layer: number) => any,
     parent?: T,
     layer = 0,
@@ -99,7 +91,6 @@ export async function traverseAsync<T = any>(
             if (ret !== undefined) {
                 return ret
             } else {
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 if ((d[childrenKey] as any) instanceof Array) {
                     ret = await traverse(d[childrenKey] as T[], childrenKey, func, d, layer + 1)
                     if (ret !== undefined) {
@@ -119,19 +110,12 @@ export async function traverseAsync<T = any>(
  * @param filter        filter函数，如何有值，根据返回boolean判断是否过滤该此遍历函数返回
  * @returns
  */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 export async function traverseMapAsync<T = any>(
     datas: T[],
     childrenKey: keyof T,
-    func: (
-        d: T,
-        i: number,
-        ds: T[],
-        p: T | undefined,
-        layer: number,
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    ) => any,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    func: (d: T, i: number, ds: T[], p: T | undefined, layer: number) => any,
+
     filter?: (d: T, i: number, ds: T[], p: T | undefined, layer: number) => boolean,
 ): Promise<T[]> {
     const mapData: T[] = []

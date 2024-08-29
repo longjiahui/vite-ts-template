@@ -12,9 +12,7 @@ export * from './traverse'
  * @returns { Ref<T> }      返回Ref<T>
  */
 export function computedAsync<
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     Return = any, // return type
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     T = any, // watch type
     Immediate extends Readonly<boolean> = true,
 >(

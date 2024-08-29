@@ -4,7 +4,7 @@ COPY ./package.json .
 COPY ./package-lock.json .
 RUN npm ci
 COPY . .
-# type check and eslint
+# type check
 RUN npm run lint
 # RUN npm run test
 # RUN npm run test:e2e

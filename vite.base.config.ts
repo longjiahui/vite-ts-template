@@ -8,9 +8,6 @@ export default defineConfig({
         vueJsx(),
         AutoImport({
             imports: ['vue'],
-            eslintrc: {
-                enabled: true,
-            },
             dts: 'src/auto-imports.d.ts',
         }),
         AutoImportComponents({
