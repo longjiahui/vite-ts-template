@@ -1,5 +1,0 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-npx --no -- prettier -c "./**/*.{html,vue,ts,js,json,md}"
-npm run lint
